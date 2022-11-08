@@ -1,0 +1,86 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sweeper</title>
+
+    <style>
+
+        /* table,th,td
+        {
+            border: 3px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            margin-left: auto;
+            margin-right:auto;
+            padding: 0.5rem;
+        } */
+        .fadeOut
+        {
+            visibility: hidden;
+            opacity:0;
+            transition: visibility 0s .5s, opacity .5s linear;
+        }
+        .fadeBack
+        {
+            visibility:visible;
+            opacity:100;
+        }
+        .float
+        {
+            position:fixed;
+	width:60px;
+	height:60px;
+	top:40px;
+	right:40px;
+	background-color:red;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+        }
+
+    </style>
+    <link rel="icon" type = "image/x-icon" href="./Images/Bomb.png">
+</head>
+<body style = "text-align: center; background-color:lightgrey;">
+    
+    <H1>My Sweeper</H1>
+    <form>    
+        <button class = "float" type = "submit">Reset</button>
+    </form>
+
+    
+        <h3 style="text-align:left" id = "difficulty">Difficulty</h3>
+    <div ></div>
+    <form id="input" style="text-align:left;">
+        <label for = "num"> Select Board Size</label>
+        <input id = "num" type ="number" min ="8" max="27" placeholder="Size" value="8">
+        <button id= "numButt">Submit</button>
+        <p id="SizeOut" style = "text-align: center; font-size:50px;"></p>
+        <!--This allows the user to choose the board size.-->
+    </form>
+    
+    <br>
+    
+    <form id="source" onclick ="Guess(event)">
+        <audio id="audio" src ="./QKTA234-pop.mp3" ></audio>
+        <!--Pop sound for when the user guesses-->
+        <input type = "image" src="./Images/Begin.png" id="Begin">
+        <!--Fun image input that I made in place of a submit button-->
+        <div id = "location">
+            <!--Used for the board created in JS-->
+        </div>
+    </form>
+    <script src = "./mine.js"></script>
+
+</body>
+</html>
